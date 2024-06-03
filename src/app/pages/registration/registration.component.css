@@ -1,0 +1,80 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ensure the body fills the entire viewport height */
+  }
+  
+  mat-card {
+    transform: translateY(30px);
+  width: 600px; /* Adjust the width as needed */
+  /* height: 580px; Adjust the height as needed */
+  justify-content: center;/* Adjust the width as needed */
+  margin-bottom: 2%;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  mat-card-actions {
+    display: flex;
+    justify-content: center;
+    
+  }
+
+  mat-card-actions{
+    margin-bottom: 0px;
+  }
+
+  .cardcontent{
+    margin-top: 5px;
+  }
+  button{
+    width: 600px;
+  }
+
+  .password{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+
+  }
+
+
+  .roleId{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .num{
+    width: 390px;
+  }
+
+  .as{
+    width: 50%;
+  }
+
+  mat-form-field{
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  }
+  mat-card-actions{
+    
+    justify-self: center;
+  }
+mat-card-header{
+    
+        margin-bottom: 20px; /* Adjust as needed */
+      
+}
+
+
+  .loginComponent{
+    display: flex;
+    background-color: darkgrey;
+  justify-content: center; /* Horizontally center */
+  align-items: center; /* Vertically center */
+  height: 100vh;
+   /* Full height of the viewport */
+
+  }

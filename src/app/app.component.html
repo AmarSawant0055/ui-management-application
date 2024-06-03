@@ -1,0 +1,69 @@
+<div class="parent" *ngIf="loginRegistration">
+  <mat-toolbar color="primary" class="expanded-toolbar">
+  
+  <span>
+    
+    <button mat-button routerLink="/home">{{title}}</button>
+    
+    
+  </span>
+  
+  <div class="user-options">
+    <div class="but" fxLayout="row" fxShow="false" fxShow.gt-sm>
+      
+
+      <button mat-button routerLink="/home"><mat-icon>home</mat-icon>Home</button>
+      <button mat-button routerLink="/user"><mat-icon>manage_accounts</mat-icon>User control</button>
+      <button mat-button routerLink="/user"><mat-icon>group_add</mat-icon>Create user role</button>
+      <button mat-button routerLink="/user"><mat-icon>people_outline</mat-icon>All Users</button>
+     
+      
+      
+    </div>
+    
+    <button mat-button [mat-menu-trigger-for]="menu" fxHide="false" fxHide.gt-sm>
+      
+      <mat-icon>menu</mat-icon>
+      
+    </button>
+  </div>
+  
+</mat-toolbar>
+
+<mat-menu x-position="before" #menu="matMenu">
+  
+  <button mat-menu-item routerLink="/home">
+    
+    <mat-icon>home</mat-icon>
+    
+    Home
+    
+  </button>
+  
+  
+  
+  <button mat-menu-item>
+    
+    <mat-icon>account_circle</mat-icon>
+    
+    Profile
+    
+  </button>
+  
+  <button mat-menu-item (click)="logout()">
+    
+    <mat-icon>exit_to_app</mat-icon>
+    
+    Logout
+    
+  </button>
+  
+</mat-menu>
+
+</div>
+<div>
+  <router-outlet></router-outlet>
+
+</div>
+
+

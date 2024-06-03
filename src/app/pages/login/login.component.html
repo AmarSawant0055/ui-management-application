@@ -1,0 +1,39 @@
+<div class="loginComponent">
+
+  <form [formGroup]="loginForm" (ngSubmit)="proccessTologin()">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>User Login !</mat-card-title>
+          </mat-card-header>
+
+          <mat-card-content>
+            <div >
+                <mat-form-field>
+                    <mat-label>Email</mat-label>
+                    <input matInput formControlName="email">
+                  </mat-form-field>
+            </div>
+        
+            <div>
+                <mat-form-field>
+                    <mat-label>Password</mat-label>
+                    <input type="password" matInput formControlName="password">
+                  </mat-form-field>
+            </div>
+
+          </mat-card-content>
+        
+        <mat-card-actions>
+        
+                <button mat-flat-button color="primary" type="submit">Login</button>
+            <button (click)="navigateToRegister()" mat-flat-button color="warn">New User?</button>
+    
+    
+            
+        </mat-card-actions>
+    
+        
+        
+      </mat-card>
+    </form>
+</div>

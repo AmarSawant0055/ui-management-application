@@ -1,0 +1,47 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ensure the body fills the entire viewport height */
+  }
+  
+  mat-card {
+    transform: translateY(-60px);
+    width: 600px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+    justify-content: center; /* Adjust the width as needed */
+  }
+
+  button{
+    width: 300px;
+  }
+
+  mat-card-actions {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Adjust as needed */
+  }
+
+  mat-form-field{
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  }
+  mat-card-actions{
+    
+    justify-self: center;
+  }
+mat-card-header{
+    
+        margin-bottom: 20px; /* Adjust as needed */
+      
+}
+
+  .loginComponent{
+    display: flex;
+    background-color: darkgrey;
+  justify-content: center; /* Horizontally center */
+  align-items: center; /* Vertically center */
+  height: 100vh; /* Full height of the viewport */
+
+  }
