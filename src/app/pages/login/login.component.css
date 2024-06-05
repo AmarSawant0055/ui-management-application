@@ -39,7 +39,6 @@ mat-card-header{
 
   .loginComponent{
     display: flex;
-    background-color: darkgrey;
   justify-content: center; /* Horizontally center */
   align-items: center; /* Vertically center */
   height: 100vh; /* Full height of the viewport */

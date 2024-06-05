@@ -14,6 +14,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { HomeComponent } from './pages/home/home.component';
 import { UserComponent } from './pages/user/user.component';
 import { TokenInterceptor } from './interceptors/token.interceptor';
+import { UpdateuserComponent } from './pages/updateuser/updateuser.component';
 
 
 
@@ -25,6 +26,7 @@ import { TokenInterceptor } from './interceptors/token.interceptor';
     LayoutComponent,
     HomeComponent,
     UserComponent,
+    UpdateuserComponent,
   
   ],
   imports: [

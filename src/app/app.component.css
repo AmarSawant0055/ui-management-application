@@ -10,3 +10,11 @@
 .user-options{
     display: flex;
 }
+
+.main{
+    background-color: azure;
+}
+
+button{
+    gap: 5px;  
+}

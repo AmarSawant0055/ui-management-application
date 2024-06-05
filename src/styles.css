@@ -4,3 +4,10 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 
+.mat-typography{
+    background-image: url('./assets/schoolBackground.jpg');
+    background-size: cover; /* Cover ensures the background image covers the entire container without stretching */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  background-position: center; /* Centers the background image */
+
+}

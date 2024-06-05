@@ -1,4 +1,4 @@
-import { HttpClient,HttpHeaders, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
@@ -12,38 +12,40 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 })
 export class AuthService {
 
-  constructor(private http:HttpClient, private toastr:ToastrService,private jwtHelper: JwtHelperService) { }
-  apiUrl='http://localhost:8080/management-api'
+  constructor(private http: HttpClient, private toastr: ToastrService, private jwtHelper: JwtHelperService) { }
+  apiUrl = 'http://localhost:8080/management-api';
+  private baseUrl = 'http://localhost:8080/management-api/users';
 
-  GetAll(){
-    return this.http.get(this.apiUrl+'/users/get/all-pending/associates');
+
+  GetAll() {
+    return this.http.get(this.apiUrl + '/users/get/all-pending/associates');
   }
 
   Proccedregister(data: any): Observable<any> {
-    
-    return this.http.post<any>(this.apiUrl+'/register', data, {headers : new HttpHeaders({ 'Content-Type': 'application/json' })})
+
+    return this.http.post<any>(this.apiUrl + '/register', data, { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) })
 
   }
 
   handleError(error: HttpErrorResponse) {
-    this.toastr.error('An error occurred:  '+error.error);
-    
-    
-   
+    this.toastr.error('An error occurred:  ' + error.error);
+
+
+
     // Return an observable with a user-facing error message.
     return throwError('Something bad happened; please try again later.');
   }
 
-  Proccedlogin(loginForm:any):Observable<any>{
-    return this.http.post(this.apiUrl+'/login',loginForm);
+  Proccedlogin(loginForm: any): Observable<any> {
+    return this.http.post(this.apiUrl + '/login', loginForm);
   }
 
   getPendingUsers(): Observable<User[]> {
-    return this.http.get<User[]>(this.apiUrl+'/users/get/all-pending/associates'); // Replace with your API endpoint
+    return this.http.get<User[]>(this.apiUrl + '/users/get/all-pending/associates'); // Replace with your API endpoint
   }
 
   isLoggedIn(): boolean {
-    const token = localStorage.getItem('token'); 
+    const token = localStorage.getItem('token');
     if (token) {
       return !this.jwtHelper.isTokenExpired(token);
     } else {
@@ -51,11 +53,20 @@ export class AuthService {
     }
   }
 
-  isLoggedOut(){
+  isLoggedOut() {
     localStorage.removeItem('token');
   }
 
-  
+  getRoles(): Observable<any> {
+    return this.http.get<any>(this.apiUrl + '/roles/getAll');
+  }
+
+  updateUserRole(emailAdd: string, userRoleUpdateDto: any): Observable<any> {
+    return this.http.put(`${this.baseUrl}/${emailAdd}`, userRoleUpdateDto);
+  }
+
+
+
 
 }
 

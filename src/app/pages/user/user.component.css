@@ -9,3 +9,11 @@ mat-table {
     margin: 60px;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
   }
+  th{
+    background-color: #3F51B5;
+  }
+
+  mat-header-row{
+    color: #3F51B5;
+    background-color: #3F51B5;
+  }
