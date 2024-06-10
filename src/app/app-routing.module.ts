@@ -5,10 +5,11 @@ import { RegistrationComponent } from './pages/registration/registration.compone
 import { HomeComponent } from './pages/home/home.component';
 import { UserComponent } from './pages/user/user.component';
 import { AuthGuard } from './services/auth.guard';
+import { CreateRoleComponent } from './pages/create-role/create-role.component';
 
 
 const routes: Routes = [
-  
+
   {
     path: '',
     component: LoginComponent
@@ -32,7 +33,11 @@ const routes: Routes = [
     path: 'register',
     component: RegistrationComponent
   },
- 
+  {
+    path: 'createRole',
+    component: CreateRoleComponent
+  }
+
 
 ];
 

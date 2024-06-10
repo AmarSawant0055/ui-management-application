@@ -15,6 +15,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { UserComponent } from './pages/user/user.component';
 import { TokenInterceptor } from './interceptors/token.interceptor';
 import { UpdateuserComponent } from './pages/updateuser/updateuser.component';
+import { CreateRoleComponent } from './pages/create-role/create-role.component';
 
 
 
@@ -27,6 +28,7 @@ import { UpdateuserComponent } from './pages/updateuser/updateuser.component';
     HomeComponent,
     UserComponent,
     UpdateuserComponent,
+    CreateRoleComponent,
   
   ],
   imports: [
