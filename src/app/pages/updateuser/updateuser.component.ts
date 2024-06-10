@@ -1,6 +1,7 @@
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, EventEmitter, Output } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { ToastrService } from 'ngx-toastr';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -14,7 +15,8 @@ export class UpdateuserComponent {
   roles: any[] = [];
   accountStatuses: string[] = ['APPROVED', 'PENDING', 'DECLINED'];
 
-  constructor(public dialogRef: MatDialogRef<UpdateuserComponent>, @Inject(MAT_DIALOG_DATA) public data: any, private fb: FormBuilder, private service: AuthService) {
+
+  constructor(private toastr: ToastrService, public dialogRef: MatDialogRef<UpdateuserComponent>, @Inject(MAT_DIALOG_DATA) public data: any, private fb: FormBuilder, private service: AuthService) {
     this.userForm = this.fb.group({
       fullName: [data.fullName],
       accountStatus: [data.accountStatus],
@@ -34,6 +36,7 @@ export class UpdateuserComponent {
       },
       (error) => {
         console.error('Error fetching roles', error);
+        this.toastr.error('Error fetching roles')
       }
     );
   }
@@ -52,9 +55,11 @@ export class UpdateuserComponent {
     this.service.updateUserRole(this.data.emailAdd, updateDto).subscribe(
       response => {
         this.dialogRef.close(this.userForm.value);
+        this.toastr.success('User data modified successfully');
       },
       error => {
         console.error('Error updating user role', error);
+        this.toastr.error('Error updating user role');
       }
     );
   }

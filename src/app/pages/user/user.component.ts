@@ -13,14 +13,14 @@ import { MatTableDataSource } from '@angular/material/table';
 })
 export class UserComponent implements OnInit {
 
-  users: User[] = [];
-  dataSource = new MatTableDataSource<User>(this.users);
+  user: User[] = [];
+  dataSource = new MatTableDataSource<User>(this.user);
   displayedColumns: string[] = ['id', 'fullName', 'emailAdd', 'address', 'contactNo', 'accountStatus', 'roleTypes', 'action'];
 
   constructor(private service: AuthService, public dialog: MatDialog) { }
   ngOnInit(): void {
     this.service.getPendingUsers().subscribe(users => {
-      this.users = users;
+      this.user = users;
     })
   }
 
@@ -42,10 +42,10 @@ export class UserComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
         // Update user data with the result
-        const index = this.users.findIndex(u => u.id === user.id);
+        const index = this.user.findIndex(u => u.id === user.id);
         if (index !== -1) {
-          this.users[index].accountStatus = result.accountStatus;
-          this.users[index].userRole.roleTypes = result.role;
+          this.user[index].accountStatus = result.accountStatus;
+          this.user[index].userRole.roleTypes = result.role;
           // Add any necessary logic to save changes to the server here
         }
       }
