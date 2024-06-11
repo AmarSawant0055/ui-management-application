@@ -16,6 +16,7 @@ import { UserComponent } from './pages/user/user.component';
 import { TokenInterceptor } from './interceptors/token.interceptor';
 import { UpdateuserComponent } from './pages/updateuser/updateuser.component';
 import { CreateRoleComponent } from './pages/create-role/create-role.component';
+import { AllusersComponent } from './pages/allusers/allusers.component';
 
 
 
@@ -29,6 +30,7 @@ import { CreateRoleComponent } from './pages/create-role/create-role.component';
     UserComponent,
     UpdateuserComponent,
     CreateRoleComponent,
+    AllusersComponent,
   
   ],
   imports: [

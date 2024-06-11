@@ -6,6 +6,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { UserComponent } from './pages/user/user.component';
 import { AuthGuard } from './services/auth.guard';
 import { CreateRoleComponent } from './pages/create-role/create-role.component';
+import { AllusersComponent } from './pages/allusers/allusers.component';
 
 
 const routes: Routes = [
@@ -36,6 +37,10 @@ const routes: Routes = [
   {
     path: 'createRole',
     component: CreateRoleComponent
+  },
+  {
+    path: 'allUsers',
+    component: AllusersComponent
   }
 
 

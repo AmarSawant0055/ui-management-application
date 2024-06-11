@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 @Injectable()
 export class TokenInterceptor implements HttpInterceptor {
 
-  constructor() {}
+  constructor() { }
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
@@ -22,12 +22,10 @@ export class TokenInterceptor implements HttpInterceptor {
     if (skipUrls.some(url => request.url.includes(url))) {
       // Pass the request through without modifying it
 
-      console.log('skipUrls')
       return next.handle(request);
     }
 
     const token = localStorage.getItem('token');
-    console.log('token in interceptor',token);
 
     if (token) {
       request = request.clone({

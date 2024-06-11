@@ -44,6 +44,10 @@ export class AuthService {
     return this.http.get<User[]>(this.apiUrl + '/users/get/all-pending/associates'); // Replace with your API endpoint
   }
 
+  getAllUsers(): Observable<User[]> {
+    return this.http.get<User[]>(this.apiUrl + '/users/get/all-users');
+  }
+
   isLoggedIn(): boolean {
     const token = localStorage.getItem('token');
     if (token) {
@@ -63,6 +67,10 @@ export class AuthService {
 
   updateUserRole(emailAdd: string, userRoleUpdateDto: any): Observable<any> {
     return this.http.put(`${this.baseUrl}/${emailAdd}`, userRoleUpdateDto);
+  }
+
+  deleteUser(emailAdd: string): Observable<any> {
+    return this.http.delete(`${this.baseUrl}/${emailAdd}`);
   }
 
 

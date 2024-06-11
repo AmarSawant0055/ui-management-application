@@ -4,8 +4,10 @@
     
     <span>
       
-      <button mat-button routerLink="/home">{{title}}</button>
-      
+      <button mat-button routerLink="/home">
+        <span style="font-size: 22px; padding-right: 5px;">Management App</span>
+        <span style="font-size: 14px; font-weight: lighter;">({{ title }})</span>
+      </button>   
       
     </span>
     
@@ -13,10 +15,10 @@
       <div class="but" fxLayout="row" fxShow="false" fxShow.gt-sm>
         
   
-        <button mat-button routerLink="/home"><mat-icon>home</mat-icon>Home</button>
-        <button mat-button routerLink="/user"><mat-icon>manage_accounts</mat-icon>User control</button>
-        <button mat-button routerLink="/createRole"><mat-icon>group_add</mat-icon>Create role</button>
-        <button mat-button routerLink="/user"><mat-icon>people_outline</mat-icon>All Users</button>
+        <button mat-button routerLink="/home" ><mat-icon>home</mat-icon>Home</button>
+        <button mat-button routerLink="/user" *ngIf="title === 'ROLE_ADMIN'"><mat-icon>manage_accounts</mat-icon>User control</button>
+        <button mat-button routerLink="/createRole" *ngIf="title === 'ROLE_ADMIN'"><mat-icon>group_add</mat-icon>Create role</button>
+        <button mat-button routerLink="/allUsers" *ngIf="title === 'ROLE_ADMIN'"><mat-icon>people_outline</mat-icon>All Users</button>
        
         
         
